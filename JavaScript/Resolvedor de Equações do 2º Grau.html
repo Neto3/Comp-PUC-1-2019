@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Resolvedor de equações do 2º grau</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function calculaRaizes(){
+                var a, b, c, delta, r1, r2;
+
+                a = parseInt($("#a").val());
+                b = parseInt($("#b").val());
+                c = parseInt($("#c").val());
+
+                delta = Math.pow(b, 2) - (4 * a * c);
+
+                if (delta < 0) {
+                    alert("Não há raiz real para essa equação.");
+                }
+                else {
+                    r1 = (-b+Math.sqrt(delta))/(2*a);
+                    r2 = (-b-Math.sqrt(delta))/(2*a);
+
+                    
+
+                    alert(r1+" "+r2);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        a: <input type="text" id="a"><br>
+        b: <input type="text" id="b"><br>
+        c: <input type="text" id="c"><br>
+        <button onclick="calculaRaizes();">Calcular Raízes</button>
+    </body>
+</html>

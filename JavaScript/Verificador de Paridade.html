@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Verificador de paridade</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function verificaParidade(){
+                var numero;
+                numero = parseInt($("#numero").val());
+                if (numero%2 == 0) {
+                    alert("Par");
+                }
+                else {
+                    alert("Ímpar");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="numero"><br>
+        <button onclick="verificaParidade();">Verificar</button>
+    </body>
+</html>

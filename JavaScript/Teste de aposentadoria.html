@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Testar Aposentadoria</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function testarAposentadoria(){
+            var genero, idade;
+            genero = $("#genero").val();
+            idade = parseInt($("#idade").val());
+			
+			if (idade < 0 || idade > 120)
+				alert("Idade inválida");
+			else
+			{
+				switch (genero) {
+
+					case "m":
+					case "M":
+						if (idade <= 64)
+							alert("Não aposenta.");
+						else
+							alert("Aposenta.");
+						break;
+
+					case "f":
+					case "F":
+						if (idade <= 59)
+							alert("Não aposenta.");
+						else
+							alert("Aposenta.");
+						break;
+				
+					default:
+						alert("Gênero inválido.");
+						break;
+				}
+			}
+            
+        }
+    </script>
+</head>
+<body>
+    Gênero (M|F) <input type="text" id="genero"><br>
+    Idade <input type="text" id="idade"><br>
+    <button onclick="testarAposentadoria()">Testar testarAposentadoria</button>
+</body>
+</html>

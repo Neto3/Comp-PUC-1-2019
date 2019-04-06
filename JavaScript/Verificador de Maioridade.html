@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Verificador de maioridade</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function verificaMaioridade(){
+                var idade;
+                idade = parseInt($("#idade").val());
+                if (idade >= 18) {
+                    alert("Maior");
+                }
+                else {
+                    alert("Menor");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="idade"><br>
+        <button onclick="verificaMaioridade();">Verificar</button>
+    </body>
+</html>

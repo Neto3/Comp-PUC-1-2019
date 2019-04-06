@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Venda de Ingressos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function obterValor(){
+            var tipo, idade;
+            tipo = $("#tipo").val();
+            idade = parseInt($("#idade").val());
+            
+            if (tipo == 'N'){
+                if (idade <= 20){
+                    if (idade < 0) {
+                         alert("Idade inválida.");
+                    } else {
+                        alert("R$ 50,00");
+                    }
+                } else {
+                    if (idade <= 120) {
+                        alert("R$ 75,00");
+                    } else {
+                        alert("Idade Inválida.");
+                    }
+                }
+            } else {
+                if (tipo == 'E'){
+                    if (idade <= 20){
+                        if (idade < 0) {
+                            alert("Idade inválida.");
+                        } else {
+                            alert("R$ 30,00");
+                        }
+                    } else {
+                        if (idade <= 120) {
+                            alert("R$ 40,00");
+                        } else {
+                            alert("Idade Inválida.");
+                        }
+                    }
+                } else {
+                    alert("Tipo inválido.");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    Tipo (N|E) <input type="text" id="tipo"><br>
+    Idade <input type="text" id="idade"><br>
+    <button onclick="obterValor()">Obter Valor</button>
+</body>
+</html>
