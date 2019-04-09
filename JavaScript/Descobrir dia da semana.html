@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Descobrir dia da semana</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function obterDiaDaSemana()
+		{
+            var dia;
+            dia = parseInt($("#dia").val());
+			
+			switch(dia) 
+			{
+				case 1:
+					alert("Domingo");
+					break;
+				case 2:
+					alert("Segunda-feira");
+					break;
+				case 3:
+					alert("Terça-feira");
+					break;
+				case 4:
+					alert("Quarta-feira");
+					break;
+				case 5:
+					alert("Quinta-feira");
+					break;
+				case 6:
+					alert("Sexta-feira");
+					break;
+				case 7:
+					alert("Sábado");
+					break;
+				default:
+					alert("Dia (número) da semana inválido.");
+			}
+            
+        }
+    </script>
+</head>
+<body>
+    Dia (número) <input type="text" id="dia"><br>
+    <button onclick="obterDiaDaSemana()">Obter dia da semana</button>
+</body>
+</html>
