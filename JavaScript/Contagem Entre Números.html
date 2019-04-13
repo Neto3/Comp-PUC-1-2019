@@ -1,0 +1,32 @@
+<doctype !<!DOCTYPE html>
+<html>
+<head>
+    <title>Contagem Entre Números</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript">
+        function contar(){
+            var x, y;
+            x = parseInt($("#num1").val());
+            y = parseInt($("#num2").val());
+
+            if (x > y) {
+                while(x >= y){
+                    alert(x);
+                    x--;
+                }
+            }
+            else {
+                while(x <= y){
+                    alert(x);
+                    x++;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="contar()">Iniciar contagem</button>
+</body>
+</html>

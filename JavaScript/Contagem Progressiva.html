@@ -1,0 +1,23 @@
+<doctype !<!DOCTYPE html>
+<html>
+<head>
+    <title>Contagem Progressiva</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript">
+        function contar(){
+            var x, contador;
+            x = parseInt($("#num").val());
+            contador = 0;
+
+            while (contador <= x){
+                alert(contador);
+                contador++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num">
+    <button onclick="contar()">Iniciar contagem</button>
+</body>
+</html>

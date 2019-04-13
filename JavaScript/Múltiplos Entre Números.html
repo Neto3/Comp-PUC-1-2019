@@ -1,0 +1,37 @@
+<doctype !<!DOCTYPE html>
+<html>
+<head>
+    <title>Múltiplos Entre Números</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript">
+        function contar(){
+            var a, b, c;
+            a = parseInt($("#a").val());
+            b = parseInt($("#b").val());
+            c = parseInt($("#c").val());
+
+            if (a > b) {
+                while (a >= b){
+                    if (a % c == 0) {
+                        alert(a);
+                    }
+                    a--;
+                }
+            } else {
+                while (a <= b){
+                    if (a % c == 0) {
+                        alert(a);
+                    }
+                    a++;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <input type="text" id="c">
+    <button onclick="contar()">Iniciar contagem</button>
+</body>
+</html>

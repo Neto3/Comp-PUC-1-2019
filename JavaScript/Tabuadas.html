@@ -1,0 +1,26 @@
+<doctype !<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerar Tabuadas</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript">
+        function gerarTabuada(){
+            var x, contador, tabuada;
+            x = parseInt($("#num").val());
+            contador = 0;
+            tabuada = "";
+
+            while (contador <= 10){
+                tabuada = tabuada + "\n" + x + "x" + contador + "=" + x*contador;
+                contador++;
+            }
+
+            alert(tabuada);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num">
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+</body>
+</html>
