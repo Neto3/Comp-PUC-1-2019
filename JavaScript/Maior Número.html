@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maior número</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript">
+        // Cria array onde os números serão armazenados
+        var numeros = [];
+
+        function adicionar(){
+
+            var x;
+
+            // Pega o número digitado pelo usuário
+            x = parseInt($("#num").val());
+
+            // Adiciona o número a array
+            numeros.push(x);
+            
+        }
+
+        function obtermaior(){
+
+            var maior = 0;
+
+            // Compara cada número da array com o maior atual
+            for (var i = 0; i < numeros.length; i++){
+
+                if (numeros[i] > maior){
+                    maior = numeros[i];
+                }
+
+            }
+
+            alert(maior);
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="obtermaior()">Obter Maior Número</button>
+    <div id="console"></div>
+</body>
+</html>
