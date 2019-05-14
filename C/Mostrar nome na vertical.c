@@ -1,51 +1,83 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
-short int isVogal(char c);
-int countVogais(char nome[150]);
+short int isVowel(char);
+char* getVowels(char[]);
 
-main(){
+int main(){
 
-    char nome[150];
-    int i;
+    char full_name[150];
+    int i, vowels_count;
+    char* vowels;
 
-    memset(nome, '\0', 150); //Sempre usar memset antes de strlen
+    memset(&full_name, '\0', 150); //Sempre usar memset antes de strlen
 
-    printf("Digite um nome\n");
+    printf("What's your full name?\n");
 
-    scanf("%[^\n]s", nome); //Não há a necessidade de usar o & para string
+    scanf("%[^\n]s", full_name); //Nao ha a necessidade de usar o & para string
 
-    for (i = 0; i < strlen(nome); i++) {
+    printf("Let's see your name in vertical:\n");
 
-        printf("%c\n", nome[i]);
+    for (i = 0; i < strlen(full_name); i++) {
+
+        printf("%c\n", full_name[i]);
 
     }
 
-    printf("Número de vogais: %d", countVogais(nome));
+    vowels = getVowels(full_name);
 
-}
+    vowels_count = strlen(vowels);
 
-short int isVogal(char c){
-    char vogais[5];
-    int i;
-    vogais[0] = 'a';
-    vogais[1] = 'e';
-    vogais[2] = 'i';
-    vogais[3] = 'o';
-    vogais[4] = 'u';
+    if (vowels_count > 0) {
 
-    for(i=0;i<5;i++){
-        if (c == vogais[i])
-            return 1;
+        if (vowels_count == 1)
+            printf("There is 1 vowel in your name: %s.", vowels);
+        else
+            printf("There are %d vowels in your name: %s.", vowels_count, vowels);
+
     }
-    return 0;
+    else
+        printf("There are no vowels in your name.");
+
+
+
+    return(0);
+
 }
 
-int countVogais(char nome[150]){
+short int isVowel(char testing_char){
+
+    char vowels[5] = {'a','e','i','o','u'};
+    int i;
+
+    for (i = 0; i < 5; i++) {
+        if (tolower(testing_char) == vowels[i])
+            return(1);
+    }
+
+    return(0);
+
+}
+
+char* getVowels(char name[150]) {
+
+    char vowels[150];
     int count = 0, i;
-    for (i=1;i<strlen(nome);i++){
-        if (isVogal(nome[i]))
+
+    memset(&vowels, '\0', 150);
+
+    for (i = 0; i < strlen(name); i++) {
+
+        if (isVowel(name[i])){
+
+            vowels[count] = name[i];
             count++;
+
+        }
+
     }
-    return count;
+
+    return(vowels);
+
 }
