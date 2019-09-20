@@ -91,10 +91,13 @@ void mostrarMenuGerenciamento(int t){
             insere(t);
             break;
         case 2:
+            altera(t);
             break;
         case 3:
+            consulta(t);
             break;
         case 4:
+            exlui(t);
             break;
     }
 
@@ -137,15 +140,33 @@ void insere(int t){
             printf("Digite o semestre:\n");
             scanf("%d", &aluno_disc.semestre);
             aluno_discs[aluno_discs_inseridos] = aluno_disc;
-            alunos_inseridos++;
+            aluno_discs_inseridos++;
             break;
     }
 
 }
 void altera(int t){
 
+    int i;
+
+    Aluno aluno;
+    Disciplina disciplina;
+    Aluno_Disc aluno_disc;
+
     switch (t) {
         case 1:
+            printf("Digite o RA do aluno:\n");
+            scanf("%d", &aluno.ra);
+            for (i = 0; i < alunos_inseridos; i++){
+                if (aluno.ra == alunos[i].ra) {
+                    printf("Digite o novo RA do aluno:\n");
+                    scanf("%d", &alunos[i].ra);
+                    printf("Digite o novo nome do aluno:\n");
+                    scanf("%s", &alunos[i].nome);
+                    printf("Digite a nova data de nascimento do aluno:\n");
+                    scanf("%s", &alunos[i].nasc);
+                }
+            }
             break;
         case 2:
             break;
@@ -156,10 +177,28 @@ void altera(int t){
 }
 void consulta(int t){
 
+    int i;
+
+    Aluno aluno;
+    Disciplina disciplina;
+    Aluno_Disc aluno_disc;
+
     switch (t) {
         case 1:
+            printf("Digite o RA do aluno:\n");
+            scanf("%d", &aluno.ra);
+            for (i = 0; i < alunos_inseridos; i++){
+                if (aluno.ra == alunos[i].ra)
+                    printf("%d, %s, %s\n", alunos[i].ra, alunos[i].nome, alunos[i].nasc);
+            }
             break;
         case 2:
+            printf("Digite o ID da disciplina:\n");
+            scanf("%d", &disciplina.id);
+            for (i = 0; i < disciplinas_inseridas; i++){
+                if (disciplina.id == disciplinas[i].id)
+                    printf("%d, %s, %s\n", alunos[i].ra, alunos[i].nome, alunos[i].nasc);
+            }
             break;
         case 3:
             break;
@@ -168,8 +207,28 @@ void consulta(int t){
 }
 void exlui(int t){
 
+    int i, e = 0;
+
+    Aluno aluno, aluno2;
+    Disciplina disciplina;
+    Aluno_Disc aluno_disc;
+
     switch (t) {
         case 1:
+            printf("Digite o RA do aluno:\n");
+            scanf("%d", &aluno.ra);
+            for (i = 0; i < alunos_inseridos; i++){
+                if (aluno.ra == alunos[i].ra){
+                    alunos_inseridos--;
+                    e = 1;
+                }
+                if (e == 1) {
+                    if (alunos_inseridos == i)
+                        alunos[i] = aluno2;
+                    else
+                        alunos[i] = alunos[i+1];
+                } 
+            }
             break;
         case 2:
             break;
@@ -212,6 +271,7 @@ void mostrarListagem(int t){
             for (i = 0; i < alunos_inseridos; i++){
                 printf("%d, %s, %s\n", alunos[i].ra, alunos[i].nome, alunos[i].nasc);
             }
+            printf("%d alunos inserido(s).\n", alunos_inseridos);
             break;
         case 2:
             printf("Listagem de disciplinas:\n");
