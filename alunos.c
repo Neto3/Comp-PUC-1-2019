@@ -197,7 +197,7 @@ void consulta(int t){
             scanf("%d", &disciplina.id);
             for (i = 0; i < disciplinas_inseridas; i++){
                 if (disciplina.id == disciplinas[i].id)
-                    printf("%d, %s, %s\n", alunos[i].ra, alunos[i].nome, alunos[i].nasc);
+                    printf("%d, %s, %s\n", disciplinas[i].id, disciplinas[i].sigla, disciplinas[i].nome);
             }
             break;
         case 3:
