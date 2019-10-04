@@ -1,0 +1,17 @@
+Discussão sobre a proposta do projeto
+
+1. Idealizar proposta
+2. Levantar requisitos principais sobre o programa
+3. Ilustrar algumas das princiais telas da aplicação
+4. Identificar as estruturas de dados que serão utilizadas
+5. Refletir sobre a estruturação do programa (funções/bibliotecas)
+6. Relacionar as atividades/tarefas que deverão ser realizadas p/ entregar a aplic. final
+7. Criar um cronograma de atividades semanal
+
+Metodologias ágeis
+
+- Scrum
+- XP
+- Lean
+- Features
+- Design Sprint
